@@ -3,7 +3,7 @@ const udp = require("dgram");
 // --------------------creating a udp server --------------------
 
 // creating a udp server
-var server = udp.createSocket("udp4");
+var server = udp.createSocket("udp6");
 
 // emits when any error occurs
 server.on("error", function (error) {
@@ -15,7 +15,7 @@ server.on("error", function (error) {
 server.on("message", function (msg, info) {
     console.log("Data received from client : " + msg.toString());
     console.log(
-        "Received %d bytes from %s:%d\n",
+        "Received %d bytes from %s: %d\n",
         msg.length,
         info.address,
         info.port
